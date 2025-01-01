@@ -1,0 +1,140 @@
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.section-title h2 {
+    margin: 0;
+}
+.section-title a {
+    text-decoration: none;
+    color: #4A6CF7;
+    font-weight: 500;
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.card {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    margin-right: 20px;
+}
+.card:last-child {
+    margin-right: 0;
+}
+.card .card-info {
+    display: flex;
+    flex-direction: column;
+}
+.card .card-info span {
+    margin-bottom: 10px;
+}
+.card .card-info .balance {
+    font-size: 24px;
+    font-weight: 700;
+}
+.card .card-info .card-number {
+    font-size: 18px;
+}
+.card .card-icon {
+    font-size: 24px;
+}
+.activity, .transfer, .balance-history, .expense-statistics {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.activity, .transfer, .balance-history, .expense-statistics {
+    display: flex;
+    justify-content: space-between;
+}
+.activity .chart, .transfer .contacts, .balance-history .chart, .expense-statistics .chart {
+    flex: 1;
+}
+.activity .chart img, .transfer .contacts img, .balance-history .chart img, .expense-statistics .chart img {
+    width: 100%;
+}
+.transfer .contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.transfer .contacts .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.transfer .contacts .contact img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.transfer .contacts .contact span {
+    font-size: 14px;
+    font-weight: 500;
+}
+.transfer .amount {
+    display: flex;
+    align-items: center;
+}
+.transfer .amount input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.transfer .amount button {
+    padding: 10px 20px;
+    background-color: #4A6CF7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.recent-transactions {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.recent-transactions ul {
+    list-style: none;
+    padding: 0;
+}
+.recent-transactions ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.recent-transactions ul li span {
+    font-size: 14px;
+    font-weight: 500;
+}
+.recent-transactions ul li .amount {
+    font-size: 16px;
+    font-weight: 700;
+}
+.recent-transactions ul li .amount.negative {
+    color: #ff4d4f;
+}
+.recent-transactions ul li .amount.positive {
+    color: #52c41a;
+}
+.statistics {
+    display: flex;
+    justify-content: space-between;
+}

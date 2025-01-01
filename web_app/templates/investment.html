@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Investments Dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/investment.css' %}">
+{% endblock %}
+
+{% block header %}Investments{% endblock %}
+
+{% block content %}
+<div class="stats">
+    <div class="stat">
+        <h3>Total Invested Amount</h3>
+        <p>$150,000</p>
+    </div>
+    <div class="stat">
+        <h3>Number of Investments</h3>
+        <p>1,250</p>
+    </div>
+    <div class="stat">
+        <h3>Rate of Return</h3>
+        <p>+5.80%</p>
+    </div>
+</div>
+<div class="charts">
+    <div class="chart">
+        <h3>Yearly Total Investment</h3>
+        <img alt="Yearly Total Investment Chart" height="200" src="https://storage.googleapis.com/a1aa/image/hdBXZHVrhcrGAtV7HapnBUJeXfydEy52Q4heTTGX8Ky4czePB.jpg" width="400"/>
+    </div>
+    <div class="chart">
+        <h3>Monthly Revenue</h3>
+        <img alt="Monthly Revenue Chart" height="200" src="https://storage.googleapis.com/a1aa/image/4ZnhFlWO3CLUDVXM911sIRYclJfyr1wf2hMwDDHwQIOiuZfnA.jpg" width="400"/>
+    </div>
+</div>
+<div class="investment">
+    <h3>My Investment</h3>
+    <div class="investment-item">
+        <img alt="Apple Store logo" height="40" src="https://storage.googleapis.com/a1aa/image/rHKTESAhCv7wDhYLVO1DohcUzEdeFnA74kPpEwXb7befczePB.jpg" width="40"/>
+        <div class="info">
+            <h4>Apple Store</h4>
+            <p>E-commerce, Marketplace</p>
+        </div>
+        <div class="amount">$54,000</div>
+        <div class="return positive">+16%</div>
+    </div>
+    <div class="investment-item">
+        <img alt="Samsung Mobile logo" height="40" src="https://storage.googleapis.com/a1aa/image/SbN7EgrVXaLdOpzlcgAf2d4IFx4eVsLfYPuReyxfeBFhmb2fJA.jpg" width="40"/>
+        <div class="info">
+            <h4>Samsung Mobile</h4>
+            <p>E-commerce, Marketplace</p>
+        </div>
+        <div class="amount">$25,300</div>
+        <div class="return negative">-4%</div>
+    </div>
+    <div class="investment-item">
+        <img alt="Tesla Motors logo" height="40" src="https://storage.googleapis.com/a1aa/image/b5xzMXfUmVwZdKt0kbTPYwtF016Oo3TynC4BqF5AQvLM3sfTA.jpg" width="40"/>
+        <div class="info">
+            <h4>Tesla Motors</h4>
+            <p>Electric Vehicles</p>
+        </div>
+        <div class="amount">$8,200</div>
+        <div class="return positive">+25%</div>
+    </div>
+</div>
+<div class="trending-stock">
+    <h3>Trending Stock</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>SL No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01.</td>
+                <td>Trivago</td>
+                <td>$520</td>
+                <td class="return positive">+5%</</td>
+            </tr>
+            <tr>
+                <td>02.</td>
+                <td>Canon</td>
+                <td>$480</td>
+                <td class="return positive">+10%</td>
+            </tr>
+            <tr>
+                <td>03.</td>
+                <td>Uber Food</td>
+                <td>$350</td>
+                <td class="return negative">-3%</td>
+            </tr>
+            <tr>
+                <td>04.</td>
+                <td>Nokia</td>
+                <td>$940</td>
+                <td class="return positive">+2%</td>
+            </tr>
+            <tr>
+                <td>05.</td>
+                <td>Tiktok</td>
+                <td>$670</td>
+                <td class="return negative">-12%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
