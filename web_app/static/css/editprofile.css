@@ -1,15 +1,11 @@
-
-.main-content {
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .settings-content {
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin: auto;
+    top: 0;
 }
 
 .settings-content .tabs {
@@ -46,12 +42,13 @@
 }
 
 .settings-content .form-group input {
-    width: 100%;
     padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     font-size: 14px;
     color: #1a1a1a;
+    max-width: 700 px;
+    width: 90%;
 }
 
 .settings-content .form-group .half-width {

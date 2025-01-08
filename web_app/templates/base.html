@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block extra_css %}{% endblock %}
+    {% block extra_css %}
+    {% endblock %}
 </head>
 <body>
     <div class="container">
@@ -41,8 +42,17 @@
                     <img alt="User profile picture" height="40" src="https://storage.googleapis.com/a1aa/image/mJeBZHqIaw1kfUs0uni0MAyfS5xeQmgXorBaleJV0hKI0N7fE.jpg" width="40"/>
                 </div>
             </div>
-            {% block content %}{% endblock %}
+            <div class="content" id="scrollable-content">
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var content = document.getElementById('scrollable-content');
+            content.style.overflowY = 'auto';
+            content.style.height = 'calc(100vh - 80px)'; // Adjust based on header height
+        });
+    </script>
 </body>
 </html>

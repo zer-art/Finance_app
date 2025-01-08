@@ -1,106 +1,112 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Bank Dashboard{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% block title %}
+  Bank Dashboard
 {% endblock %}
 
-{% block header %}Overview{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %}
+
+{% block header %}
+  Overview
+{% endblock %}
 
 {% block content %}
-<div class="section-title">
-    <h2>My Cards</h2>
-    <a href="#">See All</a>
-</div>
-<div class="cards">
-    <div class="card">
+  <div class="dashboard-content">
+    <div class="section-title">
+      <h2>My Cards</h2>
+      <a href="#">See All</a>
+    </div>
+    <div class="cards">
+      <div class="card">
         <div class="card-info">
-            <span class="balance">$5,756</span>
-            <span>CARD HOLDER</span>
-            <span>Eddy Cusuma</span>
-            <span>VALID THRU</span>
-            <span>12/22</span>
-            <span class="card-number">3778 **** **** 1234</span>
+          <span class="balance">$5,756</span>
+          <span>CARD HOLDER</span>
+          <span>Eddy Cusuma</span>
+          <span>VALID THRU</span>
+          <span>12/22</span>
+          <span class="card-number">3778 **** **** 1234</span>
         </div>
         <div class="card-icon">
-            <i class="fas fa-credit-card"></i>
+          <i class="fas fa-credit-card"></i>
         </div>
-    </div>
-    <div class="card">
+      </div>
+      <div class="card">
         <div class="card-info">
-            <span class="balance">$5,756</span>
-            <span>CARD HOLDER</span>
-            <span>Eddy Cusuma</span>
-            <span>VALID THRU</span>
-            <span>12/22</span>
-            <span class="card-number">3778 **** **** 1234</span>
+          <span class="balance">$5,756</span>
+          <span>CARD HOLDER</span>
+          <span>Eddy Cusuma</span>
+          <span>VALID THRU</span>
+          <span>12/22</span>
+          <span class="card-number">3778 **** **** 1234</span>
         </div>
         <div class="card-icon">
-            <i class="fas fa-credit-card"></i>
+          <i class="fas fa-credit-card"></i>
         </div>
-    </div>
-    <div class="recent-transactions">
+      </div>
+      <div class="recent-transactions">
         <h2>Recent Transaction</h2>
         <ul>
-            <li>
-                <span>Deposit from my Card</span>
-                <span class="amount negative">-$850</span>
-            </li>
-            <li>
-                <span>Deposit Paypal</span>
-                <span class="amount positive">+$2,500</span>
-            </li>
-            <li>
-                <span>Jemi Wilson</span>
-                <span class="amount positive">+$5,400</span>
-            </li>
+          <li>
+            <span>Deposit from my Card</span>
+            <span class="amount negative">-$850</span>
+          </li>
+          <li>
+            <span>Deposit Paypal</span>
+            <span class="amount positive">+$2,500</span>
+          </li>
+          <li>
+            <span>Jemi Wilson</span>
+            <span class="amount positive">+$5,400</span>
+          </li>
         </ul>
+      </div>
     </div>
-</div>
-<h2>Weekly Activity</h2>
-<div class="statistics">
-    <div class="activity">
+    <h2>Weekly Activity</h2>
+    <div class="statistics">
+      <div class="activity">
         <div class="chart">
-            <img alt="Weekly Activity Chart" height="200" src="https://storage.googleapis.com/a1aa/image/eLFST2jZeZhvMkpL1YdgCcvBAXLhb4fPyzfmepjUm98AkhAgC.jpg" width="400"/>
+          <img alt="Weekly Activity Chart" height="200" src="https://storage.googleapis.com/a1aa/image/eLFST2jZeZhvMkpL1YdgCcvBAXLhb4fPyzfmepjUm98AkhAgC.jpg" width="400" />
         </div>
-    </div>
-    <div class="expense-statistics">
+      </div>
+      <div class="expense-statistics">
         <h2>Expense Statistics</h2>
         <div class="chart">
-            <img alt="Expense Statistics Chart" height="200" src="https://storage.googleapis.com/a1aa/image/VHqeg0Ied8lO1UaRj1yWMUl1qSgq0U7FlTOinGbxCI6oMEAUA.jpg" width="200"/>
+          <img alt="Expense Statistics Chart" height="200" src="https://storage.googleapis.com/a1aa/image/VHqeg0Ied8lO1UaRj1yWMUl1qSgq0U7FlTOinGbxCI6oMEAUA.jpg" width="200" />
         </div>
+      </div>
     </div>
-</div>
-<h2>Quick Transfer</h2>
-<div class="transfer">
-    <div class="contacts">
+    <h2>Quick Transfer</h2>
+    <div class="transfer">
+      <div class="contacts">
         <div class="contact">
-            <img alt="Livia Bator" height="50" src="https://storage.googleapis.com/a1aa/image/3e7deMgByPleuoBNmfBn2yS6zAhet0BlkwYTiQJfLtpjKDBAF.jpg" width="50"/>
-            <span>Livia Bator</span>
-            <span>CEO</span>
+          <img alt="Livia Bator" height="50" src="https://storage.googleapis.com/a1aa/image/3e7deMgByPleuoBNmfBn2yS6zAhet0BlkwYTiQJfLtpjKDBAF.jpg" width="50" />
+          <span>Livia Bator</span>
+          <span>CEO</span>
         </div>
         <div class="contact">
-            <img alt="Randy Press" height="50" src="https://storage.googleapis.com/a1aa/image/JZWVzZve6RRlMqK8P7eNn0eaBL8BH9E9IIZec4f4e9cPJDBAF.jpg" width="50"/>
-            <span>Randy Press</span>
-            <span>Director</span>
+          <img alt="Randy Press" height="50" src="https://storage.googleapis.com/a1aa/image/JZWVzZve6RRlMqK8P7eNn0eaBL8BH9E9IIZec4f4e9cPJDBAF.jpg" width="50" />
+          <span>Randy Press</span>
+          <span>Director</span>
         </div>
         <div class="contact">
-            <img alt="Workman" height="50" src="https://storage.googleapis.com/a1aa/image/YZlJjRdcJYKUPFFGdMxPaia7307gGt1EsiRNuaI8jKrJDBAF.jpg" width="50"/>
-            <span>Workman</span>
-            <span>Designer</span>
+          <img alt="Workman" height="50" src="https://storage.googleapis.com/a1aa/image/YZlJjRdcJYKUPFFGdMxPaia7307gGt1EsiRNuaI8jKrJDBAF.jpg" width="50" />
+          <span>Workman</span>
+          <span>Designer</span>
         </div>
-    </div>
-    <div class="amount">
-        <input placeholder="Write Amount" type="text" value="525.50"/>
+      </div>
+      <div class="amount">
+        <input placeholder="Write Amount" type="text" value="525.50" />
         <button>Send <i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-</div>
-<h2>Balance History</h2>
-<div class="balance-history">
-    <div class="chart">
-        <img alt="Balance History Chart" height="200" src="https://storage.googleapis.com/a1aa/image/FVzb3uLLFEbeZayzZ91ISxz30f9kfMW5j281f0WycxmIyQAQB.jpg" width="400"/>
+    <h2>Balance History</h2>
+    <div class="balance-history">
+      <div class="chart">
+        <img alt="Balance History Chart" height="200" src="https://storage.googleapis.com/a1aa/image/FVzb3uLLFEbeZayzZ91ISxz30f9kfMW5j281f0WycxmIyQAQB.jpg" width="400" />
+      </div>
     </div>
-</div>
+  </div>
 {% endblock %}

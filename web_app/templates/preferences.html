@@ -8,39 +8,37 @@
 <link rel="stylesheet" href="{% static 'css/tabs.css' %}">
 {% endblock %}
 
-{% block header %}Preferences{% endblock %}
+{% block header %}Settings{% endblock %}
 
 {% block content %}
-<div class="main-content">
-    <div class="settings-content">
-        {% include "tabs.html" %}
-        <div class="form-group">
-            <div class="half-width">
-                <label for="currency">Currency</label>
-                <input id="currency" type="text" value="USD"/>
-            </div>
-            <div class="half-width">
-                <label for="timezone">Time Zone</label>
-                <input id="timezone" type="text" value="(GMT-12:00) International Date Line West"/>
-            </div>
+<div class="settings-content">
+    {% include "tabs.html" %}
+    <div class="form-group">
+        <div class="half-width">
+            <label for="currency">Currency</label>
+            <input id="currency" type="text" value="USD"/>
         </div>
-        <div class="notification">
-            <div>
-                <input checked="" id="notification1" type="checkbox"/>
-                <label for="notification1">I send or receive digital currency</label>
-            </div>
-            <div>
-                <input id="notification2" type="checkbox"/>
-                <label for="notification2">I receive merchant order</label>
-            </div>
-            <div>
-                <input checked="" id="notification3" type="checkbox"/>
-                <label for="notification3">There are recommendations for my account</label>
-            </div>
+        <div class="half-width">
+            <label for="timezone">Time Zone</label>
+            <input id="timezone" type="text" value="(GMT-12:00) International Date Line West"/>
         </div>
-        <div class="save-btn">
-            <button>Save</button>
+    </div>
+    <div class="notification">
+        <div>
+            <input checked="" id="notification1" type="checkbox"/>
+            <label for="notification1">I send or receive digital currency</label>
         </div>
+        <div>
+            <input id="notification2" type="checkbox"/>
+            <label for="notification2">I receive merchant order</label>
+        </div>
+        <div>
+            <input checked="" id="notification3" type="checkbox"/>
+            <label for="notification3">There are recommendations for my account</label>
+        </div>
+    </div>
+    <div class="save-btn">
+        <button>Save</button>
     </div>
 </div>
 {% endblock %}

@@ -1,37 +1,41 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}BankDash Settings{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/security.css' %}">
-<link rel="stylesheet" href="{% static 'css/tabs.css' %}">
+{% block title %}
+  BankDash Settings
 {% endblock %}
 
-{% block header %}Settings{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/security.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/tabs.css' %}" />
+{% endblock %}
+
+{% block header %}
+  Settings
+{% endblock %}
 
 {% block content %}
-<div class="main_content">
-<div class="settings-container">
-    {% include "tabs.html" %}
-    <h2>Two-factor Authentication</h2>
-    <div class="form-group toggle">
+  <div class="main_content">
+    <div class="settings-container">
+      {% include 'tabs.html' %}
+      <h2>Two-factor Authentication</h2>
+      <div class="form-group toggle">
         <label class="toggle-switch">
-            <input id="two-factor-auth" type="checkbox"/>
-            <span class="slider"></span>
+          <input id="two-factor-auth" type="checkbox" />
+          <span class="slider"></span>
         </label>
         <label for="two-factor-auth">Enable or disable two factor authentication</label>
-    </div>
-    <h2>Change Password</h2>
-    <div class="form-group">
+      </div>
+      <h2>Change Password</h2>
+      <div class="form-group">
         <label for="current-password">Current Password</label>
-        <input id="current-password" type="password" value="********"/>
-    </div>
-    <div class="form-group">
+        <input id="current-password" type="password" value="********" />
+      </div>
+      <div class="form-group">
         <label for="new-password">New Password</label>
-        <input id="new-password" type="password" value="********"/>
+        <input id="new-password" type="password" value="********" />
+      </div>
+      <button class="save-button">Save</button>
     </div>
-    <button class="save-button">Save</button>
-</div>
-</div>
+  </div>
 {% endblock %}
