@@ -1,0 +1,166 @@
+
+.settings-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: auto;
+}
+.settings-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #E2E8F0;
+    margin-bottom: 20px;
+}
+.settings-content .tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+.tabs div {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #A0AEC0;
+}
+.settings-content .tabs a {
+    text-decoration: none;
+    color: #6b6b6b;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-bottom: 2px solid transparent;
+}
+.tabs .active {
+    color: #1A202C;
+    border-bottom: 2px solid #1A202C;
+}
+.settings-content .tabs a.active {
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.settings-content .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1A202C;
+}
+.settings-content .form-group label {
+    font-size: 14px;
+    color: #6b6b6b;
+    margin-bottom: 5px;
+    display: block;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+}
+.settings-content .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #1a1a1a;
+}
+.form-group .toggle {
+    display: flex;
+    align-items: center;
+}
+.settings-content .form-group .half-width {
+    width: 48%;
+}
+.settings-content .form-group .full-width {
+    width: 100%;
+}
+.form-group .toggle input {
+    margin-right: 10px;
+}
+.settings-content .toggle {
+    display: flex;
+    align-items: center;
+}
+.form-group .toggle label {
+    margin: 0;
+}
+.settings-content .toggle input {
+    margin-right: 10px;
+}
+.settings-content .toggle label {
+    margin: 0;
+}
+.save-button {
+    background-color: #1A202C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.settings-content .save-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.settings-content .save-btn button {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #1a202c;
+}
+input:checked + .slider:before {
+    transform: translateX(14px);
+}

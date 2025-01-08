@@ -1,0 +1,125 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F7FA;
+}
+.main-content {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.settings-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+.settings-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.settings-content .tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+.settings-content .tabs a {
+    text-decoration: none;
+    color: #6b6b6b;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-bottom: 2px solid transparent;
+}
+.settings-content .tabs a.active {
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+.settings-content .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.settings-content .form-group label {
+    font-size: 14px;
+    color: #6b6b6b;
+    margin-bottom: 5px;
+    display: block;
+}
+.settings-content .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #1a1a1a;
+}
+.settings-content .form-group .half-width {
+    width: 48%;
+}
+.settings-content .form-group .full-width {
+    width: 100%;
+}
+.settings-content .notification {
+    margin-top: 20px;
+}
+.settings-content .notification div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.settings-content .notification input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.settings-content .notification input[type="checkbox"]:checked {
+    background-color: #1d4ed8;
+}
+.settings-content .notification input[type="checkbox"]:checked::before {
+    left: 20px;
+}
+.settings-content .notification input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: left 0.3s;
+}
+.settings-content .notification label {
+    margin-left: 10px;
+    color: #6b7280;
+}
+.settings-content .save-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.settings-content .save-btn button {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}BankDash Settings{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/editprofile.css' %}">
+<link rel="stylesheet" href="{% static 'css/tabs.css' %}">
+{% endblock %}
+
+{% block header %}Settings{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="settings-content">
+        {% include "tabs.html" %}
+        <div class="form-group">
+            <div class="profile-pic">
+                <img alt="Profile picture of the user" height="80" src="https://storage.googleapis.com/a1aa/image/YAxobkKsKmqjJRprDhUgwIxSaLg3pAjqpiOh8ufo2uJCPLBKA.jpg" width="80"/>
+                <div class="edit-icon">
+                    <i class="fas fa-pen"></i>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="your-name">Your Name</label>
+                <input id="your-name" type="text" value="Charlene Reed"/>
+            </div>
+            <div class="half-width">
+                <label for="user-name">User Name</label>
+                <input id="user-name" type="text" value="Charlene Reed"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="email">Email</label>
+                <input id="email" type="email" value="charlenereed@gmail.com"/>
+            </div>
+            <div class="half-width">
+                <label for="password">Password</label>
+                <input id="password" type="password" value="********"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="dob">Date of Birth</label>
+                <input id="dob" type="text" value="25 January 1990"/>
+            </div>
+            <div class="half-width">
+                <label for="present-address">Present Address</label>
+                <input id="present-address" type="text" value="San Jose, California, USA"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="permanent-address">Permanent Address</label>
+                <input id="permanent-address" type="text" value="San Jose, California, USA"/>
+            </div>
+            <div class="half-width">
+                <label for="city">City</label>
+                <input id="city" type="text" value="San Jose"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="half-width">
+                <label for="postal-code">Postal Code</label>
+                <input id="postal-code" type="text" value="45962"/>
+            </div>
+            <div class="half-width">
+                <label for="country">Country</label>
+                <input id="country" type="text" value="USA"/>
+            </div>
+        </div>
+        <div class="save-btn">
+            <button>Save</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

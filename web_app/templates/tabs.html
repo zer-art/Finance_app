@@ -1,0 +1,5 @@
+<div class="tabs">
+    <a href="{% url 'editprofile' %}" class="{% if request.resolver_match.url_name == 'editprofile' %}active{% endif %}">Edit Profile</a>
+    <a href="{% url 'preferences' %}" class="{% if request.resolver_match.url_name == 'preferences' %}active{% endif %}">Preferences</a>
+    <a href="{% url 'security' %}" class="{% if request.resolver_match.url_name == 'security' %}active{% endif %}">Security</a>
+</div>

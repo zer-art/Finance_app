@@ -1,0 +1,74 @@
+.loans-overview {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.loans-overview .loan-types {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.loans-overview .loan-types .loan-type {
+    background-color: #F5F7FB;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+.loans-overview .loan-types .loan-type img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+.loans-overview .loan-types .loan-type h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.loans-overview .loan-types .loan-type p {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    color: #333;
+}
+.loans-overview table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.loans-overview table th,
+.loans-overview table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.loans-overview table th {
+    background-color: #F5F7FB;
+    color: #333;
+}
+.loans-overview table td {
+    color: #333;
+}
+.loans-overview table td button {
+    background-color: #fff;
+    border: 1px solid #4A6CF7;
+    color: #4A6CF7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loans-overview table td button:hover {
+    background-color: #4A6CF7;
+    color: #fff;
+}
+.loans-overview .totals {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.loans-overview .totals p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+.loans-overview .totals p span {
+    color: red;
+}

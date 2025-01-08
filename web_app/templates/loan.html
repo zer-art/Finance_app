@@ -1,610 +1,130 @@
-<html>
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-    <title>
-        BankDash - Loans
-    </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F5F7FB;
-            color: #333;
-        }
+{% block title %}BankDash - Loans{% endblock %}
 
-        .container {
-            display: flex;
-        }
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/loan.css' %}">
+{% endblock %}
 
-        .sidebar {
-            width: 250px;
-            background-color: #F5F7FB;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
+{% block header %}Loans{% endblock %}
 
-        .sidebar img {
-            width: 30px;
-            margin-right: 10px;
-        }
-
-        .sidebar h2 {
-            font-size: 15px;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar h2 span {
-            color: #333;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-
-        .sidebar ul li {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar ul li a img {
-            margin-right: 10px;
-        }
-
-        .sidebar ul li.active a {
-            color: #4A6CF7;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .header .search {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .header .search input {
-            border: none;
-            outline: none;
-            margin-left: 10px;
-            font-size: 16px;
-        }
-
-        .header .icons {
-            display: flex;
-            align-items: center;
-        }
-
-        .header .icons img {
-            width: 30px;
-            margin-left: 20px;
-        }
-
-        .loans-overview {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .loans-overview .loan-types {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .loans-overview .loan-types .loan-type {
-            background-color: #F5F7FB;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            flex: 1;
-            margin: 0 10px;
-        }
-
-        .loans-overview .loan-types .loan-type img {
-            width: 40px;
-            margin-bottom: 10px;
-        }
-
-        .loans-overview .loan-types .loan-type h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .loans-overview .loan-types .loan-type p {
-            margin: 5px 0 0 0;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .loans-overview table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .loans-overview table th,
-        .loans-overview table td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .loans-overview table th {
-            background-color: #F5F7FB;
-            color: #333;
-        }
-
-        .loans-overview table td {
-            color: #333;
-        }
-
-        .loans-overview table td button {
-            background-color: #fff;
-            border: 1px solid #4A6CF7;
-            color: #4A6CF7;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .loans-overview table td button:hover {
-            background-color: #4A6CF7;
-            color: #fff;
-        }
-
-        .loans-overview .totals {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .loans-overview .totals p {
-            margin: 0;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .loans-overview .totals p span {
-            color: red;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="sidebar">
-            <h2>
-                <img alt="BankDash logo" height="30"
-                    src="https://storage.googleapis.com/a1aa/image/OdaRbk75ZubvHNuwZXUHwMPim1CS1ifJEMAAw2MvphyivWfTA.jpg"
-                    width="30" />
-                <span>
-                    BankDash
-                </span>
-            </h2>
-            <ul>
-                <li>
-                    <a href="#">
-                        <img alt="Dashboard icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=83326&format=png&color=000000" width="20" />
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Transactions icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=92276&format=png&color=000000" width="20" />
-                        Transactions
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Accounts icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=60949&format=png&color=000000" width="20" />
-                        Accounts
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Investments icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=lTuV5nBl_asc&format=png&color=000000" width="20" />
-                        Investments
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Credit Cards icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=So9Gvu5Hcyjh&format=png&color=000000" width="15" />
-                        Credit Cards
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="#">
-                        <img alt="Loans icon" height="15"
-                            src="https://img.icons8.com/?size=100&id=KjlWF_IBGRpu&format=png&color=000000"
-                            width="15" />
-                        Loans
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Services icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=11678&format=png&color=000000"
-                            width="15" />
-                        Services
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="My Privileges icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=47269&format=png&color=000000"
-                            width="15" />
-                        My Privileges
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Setting icon" height="20"
-                            src="https://img.icons8.com/?size=100&id=BYnvGv84C52t&format=png&color=000000"
-                            width="15" />
-                        Setting
-                    </a>
-                </li>
-            </ul>
+{% block content %}
+<div class="loans-overview">
+    <div class="loan-types">
+        <div class="loan-type">
+            <img alt="Personal Loans icon" height="40" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-personal-data-protection-flatart-icons-outline-flatarticons.png" width="40"/>
+            <h3>Personal Loans</h3>
+            <p>$50,000</p>
         </div>
-        <div class="content">
-            <div class="header">
-                <h1>
-                    Loans
-                </h1>
-                <div class="search">
-                    <i class="fas fa-search">
-                    </i>
-                    <input placeholder="Search for something" type="text" />
-                </div>
-                <div class="icons">
-                    <img alt="Settings icon" height="30"
-                        src="https://storage.googleapis.com/a1aa/image/Bhhv1rmbgcokElaSROYBuLp26gWNrdmKFcauJl1WIFG2XrfJA.jpg"
-                        width="30" />
-                    <img alt="Notifications icon" height="30"
-                        src="https://storage.googleapis.com/a1aa/image/MrxRvhkf7b1AayD1ehr2WAlnJOMfWth3PHOeM7gOrtKk816PB.jpg"
-                        width="30" />
-                    <img alt="User profile picture" height="30"
-                        src="https://storage.googleapis.com/a1aa/image/Mfyy61nY1eioA0Pe4n3ShadEF8Ur2RERKwgXfh913vtY816PB.jpg"
-                        width="30" />
-                </div>
-            </div>
-            <div class="loans-overview">
-                <div class="loan-types">
-                    <div class="loan-type">
-                        <img alt="Personal Loans icon" height="40"
-                            src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-personal-data-protection-flatart-icons-outline-flatarticons.png"
-                            width="40" />
-                        <h3>
-                            Personal Loans
-                        </h3>
-                        <p>
-                            $50,000
-                        </p>
-                    </div>
-                    <div class="loan-type">
-                        <img alt="Corporate Loans icon" height="40"
-                            src="https://img.icons8.com/ios/100/business--v1.png" width="40" />
-                        <h3>
-                            Corporate Loans
-                        </h3>
-                        <p>
-                            $100,000
-                        </p>
-                    </div>
-                    <div class="loan-type">
-                        <img alt="Business Loans icon" height="40"
-                            src="https://img.icons8.com/ios/100/small-business.png" width="40" />
-                        <h3>
-                            Business Loans
-                        </h3>
-                        <p>
-                            $500,000
-                        </p>
-                    </div>
-                    <div class="loan-type">
-                        <img alt="Custom Loans icon" height="40"
-                            src="https://img.icons8.com/?size=100&id=11679&format=png&color=000000" width="40" />
-                        <h3>
-                            Custom Loans
-                        </h3>
-                        <p>
-                            Choose Money
-                        </p>
-                    </div>
-                </div>
-                <h2>
-                    Active Loans Overview
-                </h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                SL No
-                            </th>
-                            <th>
-                                Loan Money
-                            </th>
-                            <th>
-                                Left to repay
-                            </th>
-                            <th>
-                                Duration
-                            </th>
-                            <th>
-                                Interest rate
-                            </th>
-                            <th>
-                                Installment
-                            </th>
-                            <th>
-                                Repay
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                01.
-                            </td>
-                            <td>
-                                $100,000
-                            </td>
-                            <td>
-                                $40,500
-                            </td>
-                            <td>
-                                8 Months
-                            </td>
-                            <td>
-                                12%
-                            </td>
-                            <td>
-                                $2,000 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                02.
-                            </td>
-                            <td>
-                                $500,000
-                            </td>
-                            <td>
-                                $250,000
-                            </td>
-                            <td>
-                                36 Months
-                            </td>
-                            <td>
-                                10%
-                            </td>
-                            <td>
-                                $8,000 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                03.
-                            </td>
-                            <td>
-                                $900,000
-                            </td>
-                            <td>
-                                $40,500
-                            </td>
-                            <td>
-                                12 Months
-                            </td>
-                            <td>
-                                12%
-                            </td>
-                            <td>
-                                $5,000 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                04.
-                            </td>
-                            <td>
-                                $50,000
-                            </td>
-                            <td>
-                                $40,500
-                            </td>
-                            <td>
-                                25 Months
-                            </td>
-                            <td>
-                                5%
-                            </td>
-                            <td>
-                                $2,000 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                05.
-                            </td>
-                            <td>
-                                $50,000
-                            </td>
-                            <td>
-                                $40,500
-                            </td>
-                            <td>
-                                5 Months
-                            </td>
-                            <td>
-                                16%
-                            </td>
-                            <td>
-                                $10,000 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                06.
-                            </td>
-                            <td>
-                                $80,000
-                            </td>
-                            <td>
-                                $25,500
-                            </td>
-                            <td>
-                                14 Months
-                            </td>
-                            <td>
-                                8%
-                            </td>
-                            <td>
-                                $2,000 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                07.
-                            </td>
-                            <td>
-                                $12,000
-                            </td>
-                            <td>
-                                $5,500
-                            </td>
-                            <td>
-                                9 Months
-                            </td>
-                            <td>
-                                13%
-                            </td>
-                            <td>
-                                $500 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                08.
-                            </td>
-                            <td>
-                                $160,000
-                            </td>
-                            <td>
-                                $100,800
-                            </td>
-                            <td>
-                                3 Months
-                            </td>
-                            <td>
-                                12%
-                            </td>
-                            <td>
-                                $900 / month
-                            </td>
-                            <td>
-                                <button>
-                                    Repay
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="totals">
-                    <p>
-                        Total
-                        <span>
-                            $125,0000
-                        </span>
-                    </p>
-                    <p>
-                        <span>
-                            $750,000
-                        </span>
-                    </p>
-                    <p>
-                        <span>
-                            $50,000 / month
-                        </span>
-                    </p>
-                </div>
-            </div>
+        <div class="loan-type">
+            <img alt="Corporate Loans icon" height="40" src="https://img.icons8.com/ios/100/business--v1.png" width="40"/>
+            <h3>Corporate Loans</h3>
+            <p>$100,000</p>
+        </div>
+        <div class="loan-type">
+            <img alt="Business Loans icon" height="40" src="https://img.icons8.com/ios/100/small-business.png" width="40"/>
+            <h3>Business Loans</h3>
+            <p>$500,000</p>
+        </div>
+        <div class="loan-type">
+            <img alt="Custom Loans icon" height="40" src="https://img.icons8.com/?size=100&id=11679&format=png&color=000000" width="40"/>
+            <h3>Custom Loans</h3>
+            <p>Choose Money</p>
         </div>
     </div>
-</body>
-
-</html>
+    <h2>Active Loans Overview</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>SL No</th>
+                <th>Loan Money</th>
+                <th>Left to repay</th>
+                <th>Duration</th>
+                <th>Interest rate</th>
+                <th>Installment</th>
+                <th>Repay</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01.</td>
+                <td>$100,000</td>
+                <td>$40,500</td>
+                <td>8 Months</td>
+                <td>12%</td>
+                <td>$2,000 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>02.</td>
+                <td>$500,000</td>
+                <td>$250,000</td>
+                <td>36 Months</td>
+                <td>10%</td>
+                <td>$8,000 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>03.</td>
+                <td>$900,000</td>
+                <td>$40,500</td>
+                <td>12 Months</td>
+                <td>12%</td>
+                <td>$5,000 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>04.</td>
+                <td>$50,000</td>
+                <td>$40,500</td>
+                <td>25 Months</td>
+                <td>5%</td>
+                <td>$2,000 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>05.</td>
+                <td>$50,000</td>
+                <td>$40,500</td>
+                <td>5 Months</td>
+                <td>16%</td>
+                <td>$10,000 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>06.</td>
+                <td>$80,000</td>
+                <td>$25,500</td>
+                <td>14 Months</td>
+                <td>8%</td>
+                <td>$2,000 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>07.</td>
+                <td>$12,000</td>
+                <td>$5,500</td>
+                <td>9 Months</td>
+                <td>13%</td>
+                <td>$500 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+            <tr>
+                <td>08.</td>
+                <td>$160,000</td>
+                <td>$100,800</td>
+                <td>3 Months</td>
+                <td>12%</td>
+                <td>$900 / month</td>
+                <td><button>Repay</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="totals">
+        <p>Total <span>$125,0000</span></p>
+        <p><span>$750,000</span></p>
+        <p><span>$50,000 / month</span></p>
+    </div>
+</div>
+{% endblock %}
